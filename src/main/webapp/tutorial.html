@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial - How to Use You-Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #007bff;
+            color: white;
+            padding: 15px 20px;
+        }
+        .header h1 {
+            margin: 0;
+            cursor: pointer;
+        }
+        .header a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            padding: 10px;
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+        .header a:hover {
+            background-color: #003f7f;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1 onclick="location.href='index.html'">&#128218; You-Notes</h1>
+    <div>
+        <a href="addNote.jsp">New Note</a>
+        <a href="noteList.jsp">View Notes</a>
+    </div>
+</div>
+<div class="container">
+    <h2>How to Use You-Notes?</h2>
+    <p>Click on the <strong>title in the header</strong> to return to the menu.</p>
+    <p>Add notes from anywhere on the website using the <strong>"Add Notes"</strong> button in the header.</p>
+    <p>View your notes from any page using the <strong>"View Notes"</strong> button in the header.</p>
+
+    <h2>How to Add a New Note?</h2>
+    <ul>
+        <li>Click the <strong>"Add Note"</strong> button in the header or menu.</li>
+        <li>Enter a <strong>title</strong> for your new note.</li>
+        <li>Optionally, add a <strong>topic, content, and a brief summary</strong>—you can edit these later.</li>
+        <li>If needed, <strong>attach a file</strong> to your note to access it later.</li>
+    </ul>
+
+    <h2>How to Explore My Notes?</h2>
+    <ul>
+        <li>Click <strong>"View Notes"</strong> in the header or menu to see a list of your notes with their titles and topics.</li>
+        <li>To <strong>view a note</strong>, click on its index—this will open the note for reading.</li>
+        <li>To <strong>see the summary</strong>, click on the note itself, and it will display below.</li>
+        <li>To <strong>delete</strong> a note, click the 🗑️ button.</li>
+        <li>To <strong>edit</strong> a note, click the ✏️ button.</li>
+    </ul>
+
+    <h2>How to Organize and Search Notes?</h2>
+    <ul>
+        <li><strong>Sorting:</strong> Choose a sorting option and click 🔽:</li>
+        <ul>
+            <li><strong>Alphabetical</strong>: Sorts notes from A to Z.</li>
+            <li><strong>Recency</strong>: Displays the most recently added notes first.</li>
+            <li><strong>Reversed Recency</strong>: Shows the earliest added notes first (default).</li>
+        </ul>
+        <li><strong>Filtering:</strong> Enter a topic in the filter option to display related notes.</li>
+        <li><strong>Searching:</strong> Enter a keyword to find notes containing the term in the title or content. Click 🔍 to apply.</li>
+        <li><strong>Resetting Filters:</strong> Click 🔁 to restore the list to its default state.</li>
+    </ul>
+</div>
+</body>
+</html>

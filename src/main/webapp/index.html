@@ -2,21 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Patient Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App Menu</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #007bff;
+        color: white;
+        padding: 15px 20px;
+    }
+    .header h1 {
+        margin: 0;
+        cursor: pointer;
+    }
+    .header a {
+        text-decoration: none;
+        color: white;
+        margin: 0 10px;
+        padding: 10px;
+        background-color: #0056b3;
+        border-radius: 5px;
+    }
+    .header a:hover {
+        background-color: #003f7f;
+    }
+    .welcome {
+        margin-top: 30px;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .welcome h2 {
+        color: #333;
+        margin-bottom: 10px;
+    }
+    .welcome p {
+        color: #555;
+        font-size: 16px;
+    }
+    .menu {
+        margin-top: 30px;
+    }
+    .menu a {
+        display: block;
+        width: 200px;
+        margin: 15px auto;
+        padding: 15px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    .menu a:hover {
+        background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-<h2>Welcome to the Patient Data App</h2>
+<div class="header">
+  <h1 onclick="location.href='index.html'">&#128218; You-Notes</h1>
+  <div>
+    <a href="addNote.jsp">New Note</a>
+    <a href="noteList.jsp">View Notes</a>
+  </div>
+</div>
 
-<nav>
-  <ul>
-    <li>
-      <a href="patientList.html">View the Patient ID List</a>
-    </li>
-    <li>
-      <a href="search.html">Search</a>
-    </li>
-  </ul>
-</nav>
+<div class="welcome">
+  <h2>Welcome to 📚You-Notes</h2>
+  <p>Your personalized note-taking app for efficient organization</p>
+</div>
+
+<div class="menu">
+  <a href="addNote.jsp">➕ New Note</a>
+  <a href="noteList.jsp">📑 View Notes</a>
+  <a href="tutorial.html">🐣 Tutorial</a>
+</div>
 
 </body>
 </html>

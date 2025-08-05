@@ -12,16 +12,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/SearchServlet")
-public class SearchServlet extends HttpServlet {
+@WebServlet("/FilterServlet")
+public class FilterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Model model = ModelFactory.getModel();
-        String query = request.getParameter("searchQuery");
-        if (query == null || query.trim().isEmpty()) {
-            response.sendRedirect("noteList.jsp?error=missingQuery");
+        String topic = request.getParameter("filterTopic");
+        String action = request.getParameter("action");
+
+        if ("undo".equals(action)) {
+            request.setAttribute("noteIndexes", model.getNoteIndexes());
+            request.setAttribute("noteNames", model.getNoteNames());
+            request.setAttribute("noteTopics", model.getNoteTopics());
+            request.setAttribute("noteContents", model.getNoteContents());
+            request.setAttribute("noteSummaries", model.getNoteSummaries());
+            request.getRequestDispatcher("noteList.jsp").forward(request, response);
             return;
         }
-
+        if (topic == null || topic.trim().isEmpty()) {
+            response.sendRedirect("noteList.jsp?error=missingTopic");
+            return;
+        }
         List<String> noteIndexes = model.getNoteIndexes();
         List<String> noteNames = model.getNoteNames();
         List<String> noteTopics = model.getNoteTopics();
@@ -33,9 +43,8 @@ public class SearchServlet extends HttpServlet {
         List<String> filteredContents = new ArrayList<>();
         List<String> filteredSummaries = new ArrayList<>();
 
-        for (int i = 0; i < noteNames.size(); i++) {
-            if (noteNames.get(i).toLowerCase().contains(query.toLowerCase()) ||
-                    noteContents.get(i).toLowerCase().contains(query.toLowerCase())) {
+        for (int i = 0; i < noteTopics.size(); i++) {
+            if (noteTopics.get(i).equalsIgnoreCase(topic)) {
                 filteredIndexes.add(noteIndexes.get(i));
                 filteredNames.add(noteNames.get(i));
                 filteredTopics.add(noteTopics.get(i));
@@ -43,8 +52,6 @@ public class SearchServlet extends HttpServlet {
                 filteredSummaries.add(noteSummaries.get(i));
             }
         }
-
-        // Pass only the filtered notes to the JSP
         request.setAttribute("filteredIndexes", filteredIndexes);
         request.setAttribute("noteNames", filteredNames);
         request.setAttribute("noteTopics", filteredTopics);

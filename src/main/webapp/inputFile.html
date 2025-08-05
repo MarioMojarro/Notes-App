@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .input-file {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-file label {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .input-file input[type="text"],
+        .input-file input[type="file"] {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-file input[type="text"]:focus,
+        .input-file input[type="file"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .input-file input[type="file"] {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2><a href="index.html">⬅️</a></h2>
+</div>
+<div class="form-container">
+    <h1>Store Your File</h1>
+    <form class="input-file" action="/inputfile.html" method="POST" enctype="multipart/form-data">
+        <label for="notename">Write your notes' name here:</label>
+        <input type="text" id="notename" name="notename" placeholder="Enter your Note name" required />
+        <label for="topic">What is the topic of your note</label>
+        <input type="text" id="topic" name="topic" placeholder="Enter your file topic"/>
+        <label for="file">Put the notes' file here:</label>
+        <input type="file" id="file" name="file" required />
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
